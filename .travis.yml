@@ -1,9 +1,6 @@
 language: python
 python:
   - "3.6"
-env:
-  # travis sets up a virtualenv for us so ignore the warning about reuse
-  - PIPENV_IGNORE_VIRTUALENVS=1
 install:
   - pip install pipenv
   - pipenv install --dev
