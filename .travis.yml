@@ -1,8 +1,19 @@
-language: python
-python:
-  - "3.6"
-install:
-  - pip install pipenv
-  - pipenv install --dev
-script:
-  - python manage.py test
+matrix:
+  include:
+  - language: python
+    python: 3.6
+    before_install:
+      - cd backend
+    install:
+      - pip install pipenv
+      - pipenv install --dev
+    script:
+      - python manage.py test
+  - language: node_js
+    node_js: 9
+    before_install:
+      - cd frontend
+    install:
+      - yarn install
+    script:
+      - yarn ci
