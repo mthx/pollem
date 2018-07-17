@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/mthx/pollem.svg?branch=master)](https://travis-ci.org/mthx/pollem)
+
 # Poll'Em
 
 Toy Django/Vue polls app as a tech stack exploration.
