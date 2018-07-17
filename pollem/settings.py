@@ -39,7 +39,6 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'rest_framework',
     'pollem.api',
-    'pollem.ui',
 ]
 
 REST_FRAMEWORK = {
