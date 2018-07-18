@@ -30,7 +30,7 @@ export default {
     Poll
   },
   created() {
-   this.fetchData(); 
+   this.fetchData();
   },
   methods: {
     fetchData() {
@@ -44,7 +44,7 @@ export default {
         .catch(e => {
           this.loading = false;
           this.error = e.toString();
-        })
+        });
     }
   }
 };
