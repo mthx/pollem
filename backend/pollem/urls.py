@@ -20,8 +20,7 @@ from .api import views
 from rest_framework import routers
 
 router = routers.DefaultRouter()
-router.register(r'questions', views.QuestionViewSet)
-router.register(r'choices', views.ChoiceViewSet)
+router.register(r'polls', views.PollViewSet)
 
 urlpatterns = [
     path('admin/', admin.site.urls),

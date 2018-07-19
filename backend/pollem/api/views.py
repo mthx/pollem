@@ -1,11 +1,11 @@
-from .models import Question, Choice
+from .models import Poll, Choice
 from rest_framework import viewsets
-from .serializers import QuestionSerializer, ChoiceSerializer
+from .serializers import PollSerializer, ChoiceSerializer
 
 
-class QuestionViewSet(viewsets.ModelViewSet):
-    queryset = Question.objects.all().order_by('-pub_date')
-    serializer_class = QuestionSerializer
+class PollViewSet(viewsets.ModelViewSet):
+    queryset = Poll.objects.all().order_by('-id')
+    serializer_class = PollSerializer
 
 
 class ChoiceViewSet(viewsets.ModelViewSet):
