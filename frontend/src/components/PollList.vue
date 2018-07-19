@@ -35,7 +35,7 @@ export default {
   methods: {
     fetchData() {
       this.loading = true;
-      fetch("/api/questions")
+      fetch("/api/polls")
         .then(r => r.json())
         .then(j => {
           this.loading = false;
