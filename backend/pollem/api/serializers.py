@@ -5,7 +5,7 @@ from .models import Poll, Choice
 class ChoiceSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = Choice
-        fields = ('choice_text', 'votes')
+        fields = ('id', 'choice_text', 'votes')
 
 
 class PollSerializer(serializers.HyperlinkedModelSerializer):
@@ -13,4 +13,4 @@ class PollSerializer(serializers.HyperlinkedModelSerializer):
     depth = 2
     class Meta:
         model = Poll
-        fields = ('question_text', 'choices')
+        fields = ('id', 'question_text', 'choices')
