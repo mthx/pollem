@@ -1,3 +1,4 @@
 {
-  "python.pythonPath": "/Users/mth/.local/share/virtualenvs/pollem-ydwAMAno/bin/python"
+  "python.pythonPath": "/Users/mth/.local/share/virtualenvs/pollem-ydwAMAno/bin/python",
+  "python.jediEnabled": false
 }

@@ -1,5 +1,5 @@
 <template>
-  <div class="poll-list">
+  <div class="PollList">
     <div class="loading" v-if="loading">
       Loading...
     </div>
@@ -8,7 +8,7 @@
     </div>
     <ul>
       <li v-for="poll in polls" :key="poll.id">
-        <Poll :poll="poll" />
+        <Poll :poll="poll" :onVote="onVote" />
       </li>
     </ul>
   </div>
@@ -16,6 +16,7 @@
 
 <script>
 import Poll from "./Poll.vue";
+import { castVote, getPolls } from "../api";
 
 export default {
   name: "PollList",
@@ -30,13 +31,12 @@ export default {
     Poll
   },
   created() {
-   this.fetchData();
+     this.fetchData(true);
   },
   methods: {
-    fetchData() {
-      this.loading = true;
-      fetch("/api/polls")
-        .then(r => r.json())
+    fetchData(initial) {
+      this.loading = initial;
+      getPolls()
         .then(j => {
           this.loading = false;
           this.polls = j;
@@ -45,21 +45,22 @@ export default {
           this.loading = false;
           this.error = e.toString();
         });
+    },
+    onVote(poll, choice) {
+      castVote(poll.id, choice.id)
+        .then(this.fetchData(false))
     }
   }
 };
 </script>
 
 <style scoped>
-.poll-list {
+.PollList {
   display: flex;
   justify-content: center;
 }
-ul {
+.PollList ul {
   list-style-type: none;
   padding: 0;
-}
-li {
-  display: inline-block;
 }
 </style>
