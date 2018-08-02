@@ -16,7 +16,6 @@ markdown = "*"
 [dev-packages]
 
 pylint = "*"
-rope = "*"
 
 
 [requires]
