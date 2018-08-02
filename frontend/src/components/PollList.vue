@@ -31,7 +31,7 @@ export default {
     Poll
   },
   created() {
-     this.fetchData(true);
+    this.fetchData(true);
   },
   methods: {
     fetchData(initial) {
@@ -47,8 +47,7 @@ export default {
         });
     },
     onVote(poll, choice) {
-      castVote(poll.id, choice.id)
-        .then(this.fetchData(false))
+      castVote(poll.id, choice.id).then(this.fetchData(false));
     }
   }
 };
