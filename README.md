@@ -27,3 +27,9 @@ $ pipenv install --dev
 $ python manage.py migrate
 $ python manage.py runserver
 ```
+
+## Possible next steps
+
+- Integrate login / Django REST Framework auth with Vue.
+- Play with paging (already enabled).
+- Play with whatever Vue has in place of Enzyme for shallow-render-style testing.
